@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Form from './Form';
+import Table from './Table';
 
-function App() {
+const App = () => {
+  const [studentData, setStudentData] = useState([]);
+
+  const handleFormSubmit = (formData) => {
+    console.log("Form data submitted:", formData);
+    setStudentData((prevData) => [...prevData, formData]);
+  };
+
+  console.log("Current studentData state:::::::::::::::::", studentData);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form onSubmit={handleFormSubmit} />
+      {
+        studentData && <Table students={studentData} />
+      }
+
     </div>
   );
-}
+};
 
 export default App;

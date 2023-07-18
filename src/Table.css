@@ -1,0 +1,12 @@
+table{
+    border: 2px solid rgb(188, 139, 139);
+    margin-left: 30%;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+th,td{
+    border: 2px solid rgb(132, 98, 98);
+    border-radius: 10px;
+    padding: 5px;
+}
